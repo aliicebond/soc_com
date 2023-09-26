@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Sociative-comitative colexification</title>
+
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.1.2/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.1.2/leaflet-providers-plugin.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.29/datatables.js"></script>
+<link href="site_libs/dt-core-1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.13.4/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.13.4/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/dt-ext-buttons-1.13.4/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.13.4/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.4/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.4/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.13.4/js/buttons.print.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Continuative</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Main</a>
+</li>
+<li>
+  <a href="text.html">Text</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="sample.csv">Download the dataset (.csv)</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Sociative-comitative colexification</h1>
+
+</div>
+
+
+<p>This site presents <strong>the X Database</strong>, a typological
+database of X in the world’s languages.</p>
+<hr />
+<div id="sample" class="section level3">
+<h3>Sample</h3>
+<p>The database contains information on X in 10 languages.</p>
+<pre><code>## Warning: Language Burushashki is absent in our version of the Glottolog
+## database. Did you mean Burushaski?
+
+## Warning: Language Burushashki is absent in our version of the Glottolog
+## database. Did you mean Burushaski?
+
+## Warning: Language Burushashki is absent in our version of the Glottolog
+## database. Did you mean Burushaski?</code></pre>
+<pre><code>## Warning: There is no coordinates for languages Burushashki</code></pre>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-244aaddf2639520a3f5a" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-244aaddf2639520a3f5a">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"zoomControl":false},"calls":[{"method":"addTiles","args":["OpenStreetMap.Mapnik",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addProviderTiles","args":["OpenStreetMap.Mapnik",null,"OpenStreetMap.Mapnik",{"errorTileUrl":"","noWrap":false,"opacity":1,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[41.7047,42.4502,42.1206,42.2646,42.5024,42.3966,42.6501,42.7428,42.4257,41.977226,41.5157,42.3239,41.2272,43.11,43.5,64.218,27.1741,-0.896,-7.33458,4.3733,-9.41971,47.31225,46.63086,48.32397,-3.53129,24.4409,58.55,-4.52416,-3.47858,-27.113],[46.558,45.8064,46.0332,45.8096,45.995,46.1041,46.3151,46.2252,47.4388,47.565486,47.8951,46.8267,48.3353,45.03,45.5,154.375,86.2547,100.44,109.716,97.3456,147.303,126.55713,135.67762,106.28874,141.928,93.3426,25.82,145.394,137.678,250.658],5,null,["","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],{"interactive":true,"className":"","stroke":false,"color":"#03F","weight":1,"opacity":0.5,"fill":true,"fillColor":["#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6","#3B8BC6"],"fillOpacity":1},null,null,["<a href='https://glottolog.org/resource/languoid/id/avar1256' target='_blank'>Avar<\/a><br>Nakh-Daghestanian>Daghestanian>Avar-Andic-Tsezic>Avar","<a href='https://glottolog.org/resource/languoid/id/hinu1240' target='_blank'>Hinuq<\/a><br>Nakh-Daghestanian>Daghestanian>Avar-Andic-Tsezic>Tsezic>West-Tsezic","<a href='https://glottolog.org/resource/languoid/id/bezh1248' target='_blank'>Bezhta<\/a><br>Nakh-Daghestanian>Daghestanian>Avar-Andic-Tsezic>Tsezic>East-Tsezic","<a href='https://glottolog.org/resource/languoid/id/dido1241' target='_blank'>Tsez<\/a><br>Nakh-Daghestanian>Daghestanian>Avar-Andic-Tsezic>Tsezic>West-Tsezic","<a href='https://glottolog.org/resource/languoid/id/cham1309' target='_blank'>Chamalal<\/a><br>Nakh-Daghestanian>Daghestanian>Avar-Andic-Tsezic>Andic","<a href='https://glottolog.org/resource/languoid/id/bagv1239' target='_blank'>Bagvalal<\/a><br>Nakh-Daghestanian>Daghestanian>Avar-Andic-Tsezic>Andic","<a href='https://glottolog.org/resource/languoid/id/kara1474' target='_blank'>Karata-Tukita<\/a><br>Nakh-Daghestanian>Daghestanian>Avar-Andic-Tsezic>Andic","<a href='https://glottolog.org/resource/languoid/id/ghod1238' target='_blank'>Godoberi<\/a><br>Nakh-Daghestanian>Daghestanian>Avar-Andic-Tsezic>Andic","<a href='https://glottolog.org/resource/languoid/id/darg1241' target='_blank'>North-Central Dargwa<\/a><br>Nakh-Daghestanian>Dargwic","<a href='https://glottolog.org/resource/languoid/id/sout3261' target='_blank'>Southwestern Dargwa<\/a><br>Nakh-Daghestanian>Dargwic","<a href='https://glottolog.org/resource/languoid/id/lezg1247' target='_blank'>Lezgian<\/a><br>Nakh-Daghestanian>Lezgic>Samur>Eastern Samur>Tabasaran-Aghul-Lezgi","<a href='https://glottolog.org/resource/languoid/id/arch1244' target='_blank'>Archi<\/a><br>Nakh-Daghestanian>Lezgic","<a href='https://glottolog.org/resource/languoid/id/budu1248' target='_blank'>Budukh<\/a><br>Nakh-Daghestanian>Lezgic>Samur>Southern Samur","<a href='https://glottolog.org/resource/languoid/id/ingu1240' target='_blank'>Ingush<\/a><br>Nakh-Daghestanian>Nakh>Chechen-Ingush","<a href='https://glottolog.org/resource/languoid/id/chec1245' target='_blank'>Chechen<\/a><br>Nakh-Daghestanian>Nakh>Chechen-Ingush","<a href='https://glottolog.org/resource/languoid/id/sout2750' target='_blank'>Southern Yukaghir<\/a><br>Yukaghir","<a href='https://glottolog.org/resource/languoid/id/jeru1240' target='_blank'>Jerung<\/a><br>Sino-Tibetan>Kiranti","<a href='https://glottolog.org/resource/languoid/id/mina1268' target='_blank'>Minangkabau<\/a><br>Austronesian>Malayo-Polynesian","<a href='https://glottolog.org/resource/languoid/id/indo1316' target='_blank'>Standard Indonesian<\/a><br>Austronesian>Malayo-Polynesian","<a href='https://glottolog.org/resource/languoid/id/gayo1244' target='_blank'>Gayo<\/a><br>Austronesian>Malayo-Polynesian","<a href='https://glottolog.org/resource/languoid/id/tokp1240' target='_blank'>Tok Pisin<\/a><br>","<a href='https://glottolog.org/resource/languoid/id/manc1252' target='_blank'>Manchu<\/a><br>Tungusic>Manchu-Jurchen>Manchu-Xibe","<a href='https://glottolog.org/resource/languoid/id/udih1248' target='_blank'>Udihe<\/a><br>Tungusic>Central Tungusic>Central-Eastern Tungusic","<a href='https://glottolog.org/resource/languoid/id/halh1238' target='_blank'>Halh Mongolian<\/a><br>Mongolic-Khitan","<a href='https://glottolog.org/resource/languoid/id/awtu1239' target='_blank'>Awtuw<\/a><br>Sepik","<a href='https://glottolog.org/resource/languoid/id/mani1292' target='_blank'>Manipuri<\/a><br>Sino-Tibetan>Kuki-Chin-Naga","<a href='https://glottolog.org/resource/languoid/id/esto1258' target='_blank'>Estonian<\/a><br>Uralic>Finnic","<a href='https://glottolog.org/resource/languoid/id/mauw1238' target='_blank'>Mauwake<\/a><br>Nuclear Trans New Guinea>Madang>","<a href='https://glottolog.org/resource/languoid/id/wano1243' target='_blank'>Wano<\/a><br>Nuclear Trans New Guinea>Dani","<a href='https://glottolog.org/resource/languoid/id/rapa1244' target='_blank'>Rapanui<\/a><br>Austronesian>Malayo-Polynesian"],null,["Avar","Hinuq","Bezhta","Tsez","Chamalal","Bagvalal","Karata-Tukita","Godoberi","North-Central Dargwa","Southwestern Dargwa","Lezgian","Archi","Budukh","Ingush","Chechen","Southern Yukaghir","Jerung","Minangkabau","Standard Indonesian","Gayo","Tok Pisin","Manchu","Udihe","Halh Mongolian","Awtuw","Manipuri","Estonian","Mauwake","Wano","Rapanui"],{"interactive":false,"permanent":false,"direction":"right","opacity":1,"offset":[7.5,0],"textsize":"10px","textOnly":true,"style":{"font-size":"15px","font-family":"sans-serif"},"className":"","sticky":true},null]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]}],"limits":{"lat":[-27.113,64.218],"lng":[25.82,250.658]}},"evals":[],"jsHooks":[]}</script>
+<hr />
+</div>
+<div id="structure-of-the-database" class="section level3">
+<h3>Structure of the database</h3>
+<p>My description.</p>
+<hr />
+</div>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p>The table below shows the collected information on each of the
+continuative expressions in the database. To see more columns, click on
+the <code>Column visibility</code> button.</p>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6f66dca5431bfb50b4e6" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6f66dca5431bfb50b4e6">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"],["alekseev2012avar","forker2013hinuq","comrie2015bezhta","polinsky2015tsez","bokarev1949chamalal","kibrik2001bagvalal","magomedbekova1971karata-tukita","godoberi1973saidova","akhmedova1019dargwa, abdullaev1954dargwa","forker2019dargwa","haspelmath1993lezgian","chumakina2007archi","budukh2007talibov","nichols2001ingush","karasaev1978chechen-dict","maslova2003yukaghir","opgenort2005jerung","zarbaliev1987minangkabau","sneddon1996indonesian","gayo2005eades","verhaar1995tokpisin","gorelova2002manchu","tolskaya20001udihe","mongolian2007nedjalkov","awtuw1986feldman","chelliah1997manipuri","Wiktionary","berghall2015mauwake","burung2017wano","kieviet2017rapanui","yoshioka2012burushaski"],["","","","","","","158, 171","143, 145","abdullaev: 206, akhmedova: 101","73, 157, 158","306, 202","7, 87,  254","236","358","65","365-366, 367","","","","","","327, 345","","","199, 203","","","218, 399","135, 397","163","67, 178"],["Avar","Hinuq","Bezhta","Tsez","Chamalal","Bagvalal","Karata-Tukita","Godoberi","North-Central Dargwa","Southwestern Dargwa","Lezgian","Archi","Budukh","Ingush","Chechen","Southern Yukaghir","Jerung","Minangkabau","Standard Indonesian","Gayo","Tok Pisin","Manchu","Udihe","Halh Mongolian","Awtuw","Manipuri","Estonian","Mauwake","Wano","Rapanui","Burushashki"],["ava","gin","kap","ddo","cji","kva","kpt","gdo","dar","","lez","aqc","bdk","inh","che","yux","jee","min","ind","gay","tpi","mnc","ude","khk","kmn","mni","ekk","mhl","wno","rap","bsk"],["Nakh-Daghestanian&gt;Daghestanian&gt;Avar-Andic-Tsezic&gt;Avar","Nakh-Daghestanian&gt;Daghestanian&gt;Avar-Andic-Tsezic&gt;Tsezic&gt;West-Tsezic","Nakh-Daghestanian&gt;Daghestanian&gt;Avar-Andic-Tsezic&gt;Tsezic&gt;East-Tsezic","Nakh-Daghestanian&gt;Daghestanian&gt;Avar-Andic-Tsezic&gt;Tsezic&gt;West-Tsezic","Nakh-Daghestanian&gt;Daghestanian&gt;Avar-Andic-Tsezic&gt;Andic","Nakh-Daghestanian&gt;Daghestanian&gt;Avar-Andic-Tsezic&gt;Andic","Nakh-Daghestanian&gt;Daghestanian&gt;Avar-Andic-Tsezic&gt;Andic","Nakh-Daghestanian&gt;Daghestanian&gt;Avar-Andic-Tsezic&gt;Andic","Nakh-Daghestanian&gt;Dargwic","Nakh-Daghestanian&gt;Dargwic","Nakh-Daghestanian&gt;Lezgic&gt;Samur&gt;Eastern Samur&gt;Tabasaran-Aghul-Lezgi","Nakh-Daghestanian&gt;Lezgic","Nakh-Daghestanian&gt;Lezgic&gt;Samur&gt;Southern Samur","Nakh-Daghestanian&gt;Nakh&gt;Chechen-Ingush","Nakh-Daghestanian&gt;Nakh&gt;Chechen-Ingush","Yukaghir","Sino-Tibetan&gt;Kiranti","Austronesian&gt;Malayo-Polynesian","Austronesian&gt;Malayo-Polynesian","Austronesian&gt;Malayo-Polynesian","","Tungusic&gt;Manchu-Jurchen&gt;Manchu-Xibe","Tungusic&gt;Central Tungusic&gt;Central-Eastern Tungusic","Mongolic-Khitan","Sepik","Sino-Tibetan&gt;Kuki-Chin-Naga","Uralic&gt;Finnic","Nuclear Trans New Guinea&gt;Madang&gt;","Nuclear Trans New Guinea&gt;Dani","Austronesian&gt;Malayo-Polynesian","Isolate"],["цадахъ","sadaq (cadaq)","къацІо","sadaq","сан","sani","saru","сану","","b-alli, canille","sanal","шо́Iртал, гIаллъа́лши, ллъва","сынта","cwana (cwan)","цхьана","irkil'l'en, n'ahā","kwaya","samo / samo-samo","bersama","urum urum","wantaim","sasa","geje","xamta (xamt?)","dowo","-min (adverbial affix?)","koos","ikos","imbirak","ananake","káa"],["цадахъ","sadaq (cadaq)","къацІо","sadaq","","sani","-kel","сану","барх","b-alli, canille","galaz","-ллъу (comitative case ending), (ллъва??)","","","-ца (instrumental case ending)","n'ahā ,-n'e  (comitative case)","kwa","samo","bersama","urum","wantaim","sasa","geje","xamta (xamt?)","dowo","-min","koos","ikos","imbirak","ananake (ko)","káa"],["postposition","postposition","postposition","postposition","","postposition","postposition","postposition","postposition","postposition","","","","","","postposition","postposition","preposition","preposition","preposition","","postposition","postposition","postposition","","","postposition/preposition","","postposition","","postposition (but see comment)"],["\"adverbial postposition\" 'together'. also quantifier (\"зависимое наречие\") 'all, completely'","loan from Avar. 1. postposition 'with' governing essive case 2. adjectival quantifier 'all, all together' 3. adverb 'together'","1. postposition 'together (with'), governs cumessive case 2. adverb 'together' possibly related to word 'all'?? (unclear). also forms part of the verb 'gather'","possibly related to sadaqaw 'equal'. syntactic language internal evidence that it is NOT a postposition, even in the 'with' sense, i.e. can be separated from noun, unlike postpositions.","","functions as наречие and наречие-послелог (the grammar distinguishes adverbs, adverbs-prepositions and prepositions)","saru 'рядом; вместе'","\"adverbial postposition\", governs dative case","unclear distinction between postpositions and adverbs","postpositions and adverbs are close in the langage. postpositions always govern a nominal, which can be used as a diagnostic. comitative: b-alli (optional) + COM (IN-ablative for younger speakers) OR canille + COM","but check more sources, some online dictionaries suggest more comitative-like use of sanal","-ллъу is the comitative case marker. за-ллъу ллъва 'together with me'. ллъва is classified as an adverb in the dictionary, but may function more as a postposition here.","сынта from сад 'one'","cwan is oblique of 'one'","N-ца цхьана 'together with'","grammar has good examples. as a postposition it is often but not always combined with comitative case.  (i.e. 'together with') also used a \"free reciprocal marker\" (in the meaning 'together')","\"1. kwa postposition 'in the company of' 2. kwaya postposition/adverb 'together'\"","","","","","postposition governs genitive case, as adverb does not co-occur with genitive.comment on status as postposition, p. 345: \" sasa “with” were defined before as adverbs: gese “like,” “same;” emgi, sasa “together” (for details see Section 6). In Manchu, words frequently shift from one grammatical class to another, partly losing their original lexical meaning and developing specific grammatical meanings instead. \"","","","based on my analysis of examples only","but needs clarification from other source!","but needs clarification from other source!","based on my analysis of examples only","postposition with uses that look adverbial to me. also interesting uses for forming numerals","PNP *anake = ‘completely, only’ &gt; Old Rapa Nui ananake 'all' &gt; Modern Rapa Nui ananake '(all) together'. good historical examples in grammar. used pronominally, i.e. referring back to subject. not clear if comitative use is comitative reinforcement or not (not, according to grammar).","According to grammar: \"Some nouns are used after other nominals as if they were postpositions to provide \nsome adverbial meaning for the preceding nominals to form adjuncts. \" i .e. adjunctive noun, not postposition (in the process of becoming a postposition?)"],["","","","","incomplete","","different","","incomplete","","incomplete","incomplete","incomplete","incomplete","incomplete","incomplete","","","","","","","","","incomplete","incomplete","incomplete","incomplete","incomplete","",""],["","","","","","","","","","","","","","","","","derived","reduplication","","reduplication","","","","","","","","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>source<\/th>\n      <th>page.number<\/th>\n      <th>language.name..Glottolog.4.7.<\/th>\n      <th>iso<\/th>\n      <th>language.family..Glottolog.4.7.<\/th>\n      <th>together.adverb<\/th>\n      <th>comitative.marker<\/th>\n      <th>type<\/th>\n      <th>comment<\/th>\n      <th>complete<\/th>\n      <th>derived<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"Bfrtip","columnDefs":[{"visible":false,"targets":[0,1,3,4,5,8,10]},{"orderable":false,"targets":0}],"buttons":[{"extend":"colvis","columns":[1,3]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+</div>
+
+<br>
+<br>
+<p> <center> Anastasia Panova, 2023 </center></p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4,h5",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
